@@ -32,12 +32,12 @@ File Description: Main JS file of the template*/
   function updateScroll() {
     if ($(window).scrollTop() >= 80) {
       $(".navfix").addClass("sticky");
-      document.getElementById("symbol-x").setAttribute("fill", "#000000");
-      document.getElementById("text-x").setAttribute("fill", "#000000");
+      // document.getElementById("symbol-x").setAttribute("fill", "#000000");
+      // document.getElementById("text-x").setAttribute("fill", "#000000");
     } else {
       $(".navfix").removeClass("sticky");
-      document.getElementById("symbol-x").setAttribute("fill", "#ffffff");
-      document.getElementById("text-x").setAttribute("fill", "#ffffff");
+      // document.getElementById("symbol-x").setAttribute("fill", "#ffffff");
+      // document.getElementById("text-x").setAttribute("fill", "#ffffff");
     }
   }
   $(function () {
@@ -475,4 +475,35 @@ particlesJS("particles-js", {
 //   }
 //   requestAnimationFrame(update);
 // };
-requestAnimationFrame(update);
+// requestAnimationFrame(update);
+
+let submitFunction = async () => {
+  let values = [];
+  document.querySelectorAll("input").forEach((val) => values.push(val.value));
+  console.log(values);
+  // try {
+  //   let res = await axios({
+  //     method: "POST",
+  //     URL: "http://127.0.0.1:5000/time-tech-official",
+  //     data: { values },
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  // }
+  // console.log(res);
+
+  let res = await axios.post(
+    "https://gmax-dash.herokuapp.com/time-tech-official",
+    values
+  );
+  console.log(res);
+  // axios
+  //   .post("https://reqres.in/api/users", user)
+  //   .then((response) => {
+  //     const addedUser = response.data;
+  //     console.log(`POST: user is added`, addedUser);
+  //     // append to DOM
+  //     appendToDOM([addedUser]);
+  //   })
+  //   .catch((error) => console.error(error));
+};
