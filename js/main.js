@@ -2,23 +2,23 @@
 Author: Rajesh-Doot	
 File Description: Main JS file of the template*/
 (function ($) {
-  "use strict";
+  'use strict';
 
   //wow animation
   new WOW().init();
   //Mobile nav
-  var $main_nav = $("#main-nav");
-  var $toggle = $(".toggle");
+  var $main_nav = $('#main-nav');
+  var $toggle = $('.toggle');
   var defaultOptions = {
     disableAt: false,
     customToggle: $toggle,
     levelSpacing: 10,
-    navTitle: "TimeTech Menu",
+    navTitle: 'TimeTech Menu',
     levelTitles: true,
     levelTitles: true,
     labelClose: false,
     levelTitleAsBack: true,
-    levelOpen: "expand",
+    levelOpen: 'expand',
     closeOnClick: true,
     insertClose: true,
     closeActiveLevel: true,
@@ -31,13 +31,9 @@ File Description: Main JS file of the template*/
   //Sticky Header
   function updateScroll() {
     if ($(window).scrollTop() >= 80) {
-      $(".navfix").addClass("sticky");
-      // document.getElementById("symbol-x").setAttribute("fill", "#000000");
-      // document.getElementById("text-x").setAttribute("fill", "#000000");
+      $('.navfix').addClass('sticky');
     } else {
-      $(".navfix").removeClass("sticky");
-      // document.getElementById("symbol-x").setAttribute("fill", "#ffffff");
-      // document.getElementById("text-x").setAttribute("fill", "#ffffff");
+      $('.navfix').removeClass('sticky');
     }
   }
   $(function () {
@@ -46,20 +42,20 @@ File Description: Main JS file of the template*/
   });
 
   //Header mega menu
-  var $nav = $("li.sbmenu");
+  var $nav = $('li.sbmenu');
   $nav.hover(
     function () {
-      $(this).addClass("hover");
+      $(this).addClass('hover');
     },
     function () {
-      $(this).removeClass("hover");
+      $(this).removeClass('hover');
     }
   );
 
   //Video magnificPopup
-  $(".video-link").magnificPopup({
-    type: "iframe",
-    mainClass: "mfp-fade",
+  $('.video-link').magnificPopup({
+    type: 'iframe',
+    mainClass: 'mfp-fade',
     removalDelay: 160,
   });
 
@@ -67,7 +63,7 @@ File Description: Main JS file of the template*/
   $('[data-toggle="tooltip"]').tooltip();
 
   //Owl-Carousel - Home hero card
-  var owl = $(".service-card-prb");
+  var owl = $('.service-card-prb');
   owl.owlCarousel({
     items: 4,
     loop: true,
@@ -100,7 +96,7 @@ File Description: Main JS file of the template*/
     },
   });
   //Owl-Carousel - Home testimonial
-  var owl = $(".testimonial-card-a");
+  var owl = $('.testimonial-card-a');
   owl.owlCarousel({
     items: 1,
     loop: true,
@@ -125,7 +121,7 @@ File Description: Main JS file of the template*/
   });
 
   //Owl-Carousel - video testimonial
-  var owl = $(".video-testimonials");
+  var owl = $('.video-testimonials');
   owl.owlCarousel({
     items: 2,
     nav: false,
@@ -151,7 +147,7 @@ File Description: Main JS file of the template*/
   });
 
   //Owl-Carousel - case-study
-  var owl = $(".project-screens");
+  var owl = $('.project-screens');
   owl.owlCarousel({
     items: 4,
     loop: true,
@@ -185,7 +181,7 @@ File Description: Main JS file of the template*/
   });
 
   //Owl-Carousel -portfolio slide
-  var owl = $(".porto-slide");
+  var owl = $('.porto-slide');
   owl.owlCarousel({
     items: 1,
     loop: true,
@@ -223,7 +219,7 @@ File Description: Main JS file of the template*/
   });
 
   //Owl-Carousel -single slide
-  var owl = $(".single-slide");
+  var owl = $('.single-slide');
   owl.owlCarousel({
     items: 1,
     loop: true,
@@ -261,7 +257,7 @@ File Description: Main JS file of the template*/
   });
 
   //Owl-Carousel - app page bages-slider
-  var owl = $(".bages-slider");
+  var owl = $('.bages-slider');
   owl.owlCarousel({
     items: 4,
     loop: true,
@@ -296,7 +292,7 @@ File Description: Main JS file of the template*/
   });
 
   //Owl-Carousel - app page bages-slider
-  var owl = $(".logo-weworkfor");
+  var owl = $('.logo-weworkfor');
   owl.owlCarousel({
     items: 4,
     loop: true,
@@ -330,7 +326,7 @@ File Description: Main JS file of the template*/
   });
 
   //  //Owl-Carousel - Home testimonial
-  var owl = $(".testimonial-card-b");
+  var owl = $('.testimonial-card-b');
   owl.owlCarousel({
     items: 1,
     loop: true,
@@ -338,7 +334,7 @@ File Description: Main JS file of the template*/
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
     dots: true,
-    dotsContainer: "#testimonials-avatar",
+    dotsContainer: '#testimonials-avatar',
     smartSpeed: 500,
     responsive: {
       0: {
@@ -357,62 +353,62 @@ File Description: Main JS file of the template*/
   });
 
   //Counter Up
-  $(".counter").counterUp({
+  $('.counter').counterUp({
     delay: 10,
     time: 2500,
   });
   //Scroll to top
   $.scrollUp({
-    animation: "fade",
+    animation: 'fade',
     scrollImg: {
       active: true,
-      type: "background",
+      type: 'background',
     },
   });
   //Portfolio Filter
-  $(".card-list").imagesLoaded(function () {
+  $('.card-list').imagesLoaded(function () {
     // init Isotope
-    var $grid = $(".card-list").isotope({
-      itemSelector: ".single-card-item",
+    var $grid = $('.card-list').isotope({
+      itemSelector: '.single-card-item',
       percentPosition: true,
       masonry: {
         // use outer width of grid-sizer for columnWidth
-        columnWidth: ".grid-sizer",
+        columnWidth: '.grid-sizer',
       },
     });
     // filter items on button click
-    $(".filter-menu").on("click", "li", function () {
-      var filterValue = $(this).attr("data-filter");
+    $('.filter-menu').on('click', 'li', function () {
+      var filterValue = $(this).attr('data-filter');
       $grid.isotope({
         filter: filterValue,
       });
     });
   });
   //for menu active class
-  $(".filter-menu li").on("click", function (event) {
-    $(this).siblings(".is-checked").removeClass("is-checked");
-    $(this).addClass("is-checked");
+  $('.filter-menu li').on('click', function (event) {
+    $(this).siblings('.is-checked').removeClass('is-checked');
+    $(this).addClass('is-checked');
     event.preventDefault();
   });
 
   // background image
-  $("[data-background]").each(function () {
+  $('[data-background]').each(function () {
     $(this).css(
-      "background-image",
-      "url(" + $(this).attr("data-background") + ")"
+      'background-image',
+      'url(' + $(this).attr('data-background') + ')'
     );
   });
 })(jQuery);
 
-particlesJS("particles-js", {
+particlesJS('particles-js', {
   particles: {
     number: { value: 80, density: { enable: true, value_area: 800 } },
-    color: { value: "#ff0000" },
+    color: { value: '#ff0000' },
     shape: {
-      type: "circle",
-      stroke: { width: 0, color: "#000000" },
+      type: 'circle',
+      stroke: { width: 0, color: '#000000' },
       polygon: { nb_sides: 5 },
-      image: { src: "img/github.svg", width: 100, height: 100 },
+      image: { src: 'img/github.svg', width: 100, height: 100 },
     },
     opacity: {
       value: 0.5,
@@ -427,26 +423,26 @@ particlesJS("particles-js", {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#ffffff",
+      color: '#ffffff',
       opacity: 0.4,
       width: 1,
     },
     move: {
       enable: true,
       speed: 6,
-      direction: "none",
+      direction: 'none',
       random: false,
       straight: false,
-      out_mode: "out",
+      out_mode: 'out',
       bounce: false,
       attract: { enable: false, rotateX: 600, rotateY: 1200 },
     },
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: 'canvas',
     events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: true, mode: "push" },
+      onhover: { enable: true, mode: 'repulse' },
+      onclick: { enable: true, mode: 'push' },
       resize: true,
     },
     modes: {
@@ -477,33 +473,53 @@ particlesJS("particles-js", {
 // };
 // requestAnimationFrame(update);
 
-let submitFunction = async () => {
-  let values = [];
-  document.querySelectorAll("input").forEach((val) => values.push(val.value));
-  console.log(values);
-  // try {
-  //   let res = await axios({
-  //     method: "POST",
-  //     URL: "http://127.0.0.1:5000/time-tech-official",
-  //     data: { values },
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  // }
-  // console.log(res);
+// let submitFunction = async () => {
+//   let values = [];
+//   document.querySelectorAll('input').forEach((val) => values.push(val.value));
+//   console.log(values);
+//   // try {
+//   //   let res = await axios({
+//   //     method: "POST",
+//   //     URL: "http://127.0.0.1:5000/time-tech-official",
+//   //     data: { values },
+//   //   });
+//   // } catch (err) {
+//   //   console.log(err);
+//   // }
+//   // console.log(res);
 
-  let res = await axios.post(
-    "https://gmax-dash.herokuapp.com/time-tech-official",
-    values
-  );
-  console.log(res);
-  // axios
-  //   .post("https://reqres.in/api/users", user)
-  //   .then((response) => {
-  //     const addedUser = response.data;
-  //     console.log(`POST: user is added`, addedUser);
-  //     // append to DOM
-  //     appendToDOM([addedUser]);
-  //   })
-  //   .catch((error) => console.error(error));
-};
+//   let res = await axios.post(
+//     'https://gmax-dash.herokuapp.com/time-tech-official',
+//     values
+//   );
+//   console.log(res);
+//   // axios
+//   //   .post("https://reqres.in/api/users", user)
+//   //   .then((response) => {
+//   //     const addedUser = response.data;
+//   //     console.log(`POST: user is added`, addedUser);
+//   //     // append to DOM
+//   //     appendToDOM([addedUser]);
+//   //   })
+//   //   .catch((error) => console.error(error));
+// };
+// const form = document.getElementById('feedback-form');
+// console.log(form);
+// let url = 'http://127.0.0.1:5000/timetech';
+// form.addEventListener('submit', async (event) => {
+//   event.preventDefault();
+//   const formData = new FormData(document.getElementById('feedback-form'));
+//   let dataObj = {};
+//   for (var pair of formData.entries()) {
+//     // dataObj.pair[0] = pair[1];
+//     dataObj[pair[0]] = pair[1];
+//     console.log(pair[0] + ': ' + pair[1]);
+//   }
+//   console.log(dataObj);
+//   try {
+//     let res = await axios({ method: 'post', url: url, data: dataObj });
+//     console.log(res);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
